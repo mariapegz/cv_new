@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maria Pereira Gutierrez - CV</title>
+  <style>
+    :root{
+      --bg:#f5f7fb;
+      --card:#ffffff;
+      --text:#16202a;
+      --muted:#5f6b7a;
+      --line:#dfe5ec;
+      --accent:#1f4b99;
+      --accent-soft:#eaf1ff;
+      --shadow: 0 10px 30px rgba(17,24,39,0.06);
+      --radius: 18px;
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ margin:0; padding:0; }
+    body{
+      font-family: Arial, Helvetica, sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.55;
+    }
+
+    .page{
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 28px 18px 40px;
+    }
+
+    .header{
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 28px;
+      margin-bottom: 18px;
+    }
+
+    .name{
+      font-size: 34px;
+      font-weight: 700;
+      margin: 0 0 8px 0;
+      letter-spacing: -0.02em;
+    }
+
+    .contact{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px 18px;
+      color: var(--muted);
+      font-size: 14px;
+      margin: 0;
+    }
+
+    .contact span{
+      white-space: nowrap;
+    }
+
+    .tabs{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin: 18px 0;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      padding: 12px 0;
+      background: linear-gradient(to bottom, rgba(245,247,251,0.98), rgba(245,247,251,0.88));
+      backdrop-filter: blur(8px);
+    }
+
+    .tab-btn{
+      border: 1px solid var(--line);
+      background: var(--card);
+      color: var(--text);
+      padding: 12px 16px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all .18s ease;
+      box-shadow: 0 2px 8px rgba(17,24,39,0.03);
+    }
+
+    .tab-btn:hover{
+      border-color: #b8c7e0;
+      transform: translateY(-1px);
+    }
+
+    .tab-btn.active{
+      background: var(--accent);
+      color: white;
+      border-color: var(--accent);
+    }
+
+    .panel{
+      display:none;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 28px;
+    }
+
+    .panel.active{ display:block; }
+
+    h2{
+      margin:0 0 18px 0;
+      font-size: 22px;
+      letter-spacing: 0.03em;
+    }
+
+    .entry{
+      padding: 18px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .entry:first-of-type{
+      border-top: none;
+      padding-top: 0;
+    }
+
+    .entry-title{
+      font-size: 18px;
+      font-weight: 700;
+      margin:0;
+    }
+
+    .entry-meta{
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .entry-location{
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    ul{
+      margin: 10px 0 0 20px;
+      padding: 0;
+    }
+
+    li{ margin: 6px 0; }
+
+    .inline-label{
+      font-weight:700;
+    }
+
+    .two-col{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:18px;
+    }
+
+    @media (min-width: 760px){
+      .two-col{
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .subsection{
+      padding: 18px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .subsection:first-child{
+      border-top:none;
+      padding-top:0;
+    }
+
+    .pill{
+      display:inline-block;
+      background: var(--accent-soft);
+      color: var(--accent);
+      border: 1px solid #cfe0ff;
+      border-radius: 999px;
+      padding: 6px 10px;
+      margin: 4px 8px 0 0;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .note{
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: 6px;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="header">
+      <h1 class="name">María Pereira Gutiérrez</h1>
+      <p class="contact">
+        <span>Phone: +34 671 475 512</span>
+        <span>Email: mariapegz@gmail.com</span>
+        <span>Location: Madrid, Spain</span>
+      </p>
+    </div>
+
+    <div class="tabs" role="tablist" aria-label="CV sections">
+      <button class="tab-btn active" data-tab="experience" role="tab" aria-selected="true">Experience</button>
+      <button class="tab-btn" data-tab="education" role="tab" aria-selected="false">Education</button>
+      <button class="tab-btn" data-tab="qualifications" role="tab" aria-selected="false">Qualifications</button>
+      <button class="tab-btn" data-tab="skills" role="tab" aria-selected="false">Skills & Interests</button>
+    </div>
+
+    <section class="panel active" id="experience" role="tabpanel">
+      <h2>EXPERIENCE</h2>
+
+      <div class="entry">
+        <p class="entry-title">Santander</p>
+        <div class="entry-meta">Products &amp; Processes Analyst, Global Team</div>
+        <div class="entry-location">Madrid, Spain | Sept. 2025 – Present</div>
+        <ul>
+          <li>Product Analysis &amp; Simplification: leveraged data analysis to assess and streamline banking products, collaborating with country teams to drive simplification initiatives</li>
+          <li>Process Automation &amp; Reporting: developed a Python-based reporting tool and supported automation of key global processes, improving efficiency and accuracy in product scenarios</li>
+          <li>Global Collections &amp; Recovery Support: contributed to the implementation of a global Collections &amp; Recovery area, helping to align and unify processes across countries</li>
+          <li>Cross-functional Coordination: managed tasks across teams, ensuring alignment and timely delivery of initiatives</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <p class="entry-title">Acciona</p>
+        <div class="entry-meta">Industrial Organization Engineer</div>
+        <div class="entry-location">Asturias, Spain | Jun. 2023 – Jan. 2024</div>
+        <ul>
+          <li>Data Analysis and Reporting: leveraged Excel extensively for data analysis, calculations, and reporting, ensuring accurate and efficiency of electrical energy, management and interpretation for various projects</li>
+          <li>Technical Documentation: prepared technical memorandums and reports, documenting project progress, technical specifications, and operational insights</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="panel" id="education" role="tabpanel">
+      <h2>EDUCATION</h2>
+
+      <div class="entry">
+        <p class="entry-title">Universidad Complutense de Madrid</p>
+        <div class="entry-meta">MSc. Data Science, Big Data &amp; Business Analytics</div>
+        <div class="entry-location">Madrid, Spain | Sep. 2025 – July 2026</div>
+        <div class="note">Coursework: Data Structures, Algorithms, Databases, Machine Learning, Deep Learning, Python, SQL, Data Visualization, Git Hub, Business Intelligence, Data Mining, Power BI</div>
+      </div>
+
+      <div class="entry">
+        <p class="entry-title">Vaasan Yliopisto - University of Vaasa</p>
+        <div class="entry-meta">3rd year Industrial Organization</div>
+        <div class="entry-location">Vaasa, Finland | Aug. 2014 – May 2018</div>
+      </div>
+
+      <div class="entry">
+        <p class="entry-title">Universidad de Oviedo</p>
+        <div class="entry-meta">Bsc. Industrial Organization</div>
+        <div class="entry-location">Asturias, Spain | Aug. 2014 – May 2018</div>
+      </div>
+
+      <div class="entry">
+        <p class="entry-title">C.E.S. San Eutiquio La Salle</p>
+        <div class="entry-meta">National Baccalaureate, Science &amp; Technology Modality</div>
+        <div class="entry-location">Asturias, Spain | Sep. 2018 – Jun. 2020</div>
+      </div>
+    </section>
+
+    <section class="panel" id="qualifications" role="tabpanel">
+      <h2>QUALIFICATIONS</h2>
+
+      <div class="entry">
+        <p class="entry-title">Statistical Learning Course</p>
+        <div class="entry-meta">60 hours</div>
+        <div class="entry-location">University of Stanford | Vaasa, Finland</div>
+        <div class="note">Covering key data science and machine learning techniques such as regression, classification, and model selection</div>
+      </div>
+
+      <div class="entry">
+        <p class="entry-title">Power BI course</p>
+        <div class="entry-meta">50 hours</div>
+        <div class="entry-location">Santander Open Academy | Online</div>
+        <div class="note">Developed data visualization and dashboarding skills using Power BI, including data modeling, transformation, and interactive reporting</div>
+      </div>
+
+      <div class="entry">
+        <p class="entry-title">Digital Marketing</p>
+        <div class="entry-meta">50 hours</div>
+        <div class="entry-location">Santander Open Academy | Online</div>
+        <div class="note">Gained knowledge of core digital marketing concepts, including SEO, SEM, social media strategies, and campaign performance analysis</div>
+      </div>
+    </section>
+
+    <section class="panel" id="skills" role="tabpanel">
+      <h2>SKILLS &amp; INTERESTS</h2>
+
+      <div class="subsection">
+        <p class="entry-title">Languages</p>
+        <p class="note">English - C1 (Cambridge Certificate), French - A2 (Alliance Française), German - A1 (Escuela Oficial de Idiomas)</p>
+      </div>
+
+      <div class="subsection">
+        <p class="entry-title">Interests</p>
+        <div>
+          <span class="pill">Automation of processes</span>
+          <span class="pill">Data Analytics</span>
+          <span class="pill">Marketing Strategies</span>
+          <span class="pill">Finance</span>
+          <span class="pill">Machine Learning</span>
+          <span class="pill">Deep Learning</span>
+          <span class="pill">Business Intelligence</span>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    const buttons = document.querySelectorAll('.tab-btn');
+    const panels = document.querySelectorAll('.panel');
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.dataset.tab;
+
+        buttons.forEach(b => {
+          b.classList.toggle('active', b === btn);
+          b.setAttribute('aria-selected', b === btn ? 'true' : 'false');
+        });
+
+        panels.forEach(panel => {
+          panel.classList.toggle('active', panel.id === target);
+        });
+      });
+    });
+  </script>
+</body>
+</html>
